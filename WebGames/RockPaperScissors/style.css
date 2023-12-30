@@ -51,31 +51,112 @@ button {
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1); /* Adding shadow to the buttons */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
   background-color: #005fa3;
   transform: scale(1.05);
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2), 0 0 8px rgba(0, 0, 0, 0.2); /* Adjusted shadow on hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2), 0 0 8px rgba(0, 0, 0, 0.2);
 }
 
 .social {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  font-size: 30px;
-  color: #333;
-  border-radius: 8px;
-  padding: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1); /* Adding shadow to the GitHub icon */
-  transition: transform 0.3s ease-in-out;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: inline-block;
+  margin: 20px;
+  margin-top: 40px;
 }
 
-.social:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2), 0 0 8px rgba(0, 0, 0, 0.2); /* Adjusted shadow on hover */
+.social a i {
+  font-size: 30px;
+  color: #333;
+  transition: color 0.3s ease-in-out;
+}
+
+.social a:hover i {
+  color: #4078c0;
+}
+
+.social a .tooltip {
+  visibility: hidden;
+  width: 120px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.social a:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.heading {
+  text-align: center;
+  background-color: #f0f0f0;
+  padding: 20px;
+  margin-top: 1px;
+  margin-bottom: 75px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.heading h1 {
+  margin: 0;
+  font-size: 2.5em;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+h2 > #result {
+  display: block;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 2em;
+  color: #007bff;
+  position: relative;
+}
+
+h2 > #result::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 0;
+  width: 100%;
+  border-top: 2px solid #007bff;
+}
+
+h2 > #result {
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 5px;
+}
+
+/* Media queries for responsive design */
+
+@media (max-width: 768px) {
+  button {
+    font-size: 16px;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  button {
+    font-size: 14px;
+  }
+
+  h2 {
+    font-size: 14px;
+  }
 }
