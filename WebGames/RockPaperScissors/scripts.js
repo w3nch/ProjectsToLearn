@@ -29,3 +29,4 @@ function getResult(userChoice, computerChoice) {
     return "You lose!";
   }
 }
+
